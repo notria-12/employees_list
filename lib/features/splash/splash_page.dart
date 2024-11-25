@@ -1,4 +1,4 @@
-import 'package:employees_list/features/employees/views/employees_page.dart';
+import 'package:employees_list/features/employees/views/pages/employees_page.dart';
 import 'package:employees_list/features/splash/viewmodels/splash_cubit.dart';
 import 'package:employees_list/features/splash/viewmodels/splash_state.dart';
 import 'package:employees_list/injection.dart';

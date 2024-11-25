@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:employees_list/features/employees/models/employee_model.dart';
 
 class EmployeeRepository {
-  Dio _client;
+  final Dio _client;
   EmployeeRepository(this._client);
 
   Future<List<EmployeeModel>> fetchEmployees() async {

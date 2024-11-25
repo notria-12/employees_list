@@ -1,5 +1,6 @@
 import 'package:employees_list/features/employees/viewmodels/employee_cubit.dart';
 import 'package:employees_list/features/employees/viewmodels/employee_state.dart';
+import 'package:employees_list/features/employees/views/widgets/employee_tile_widget.dart';
 import 'package:employees_list/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -108,14 +109,21 @@ class _EmployeesPageState extends State<EmployeesPage> {
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(14),
-                      color: Color.fromARGB(
-                        255,
-                        237,
-                        239,
-                        251,
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color.fromARGB(255, 233, 233, 233)),
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10)),
+                        color: const Color.fromARGB(
+                          255,
+                          237,
+                          239,
+                          251,
+                        ),
                       ),
-                      child: Row(
+                      child: const Row(
                         children: [
                           Text('Foto'),
                           SizedBox(
@@ -150,10 +158,8 @@ class _EmployeesPageState extends State<EmployeesPage> {
                             shrinkWrap: true,
                             itemCount: state.employees.length,
                             itemBuilder: (context, index) {
-                              return ExpansionTile(
-                                title: Text(state.employees[index].name),
-                                leading: Image.network(
-                                    state.employees[index].imageUrl),
+                              return EmployeeTile(
+                                employee: state.employees[index],
                               );
                             },
                           );
