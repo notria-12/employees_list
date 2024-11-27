@@ -1,16 +1,31 @@
 # employees_list
 
-A new Flutter project.
+App de listagem de funcionários
 
-## Getting Started
+<div style="display: flex; justify-content: space-between;">
+  <img src="splash_page.png" alt="Imagem 1" style="width: 48%;"/>
+  <img src="employees_page.png" alt="Imagem 2" style="width: 48%;"/>
+</div>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Sobre o projeto
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Esse projeto lista funcionários a partir de requisição feita a API.
+
+`Arquitetura`
+- Feature First para estruturação de diretórios
+- Para arquitetura  MVVM + Repository pattern
+- Para gerenciamento de estado usamos BloC/Cubit
+- Para serviço de injeção de dependência usamos GetIt
+- Criação de package customizado de Design System, para cores, dimensões e tipografias.
+- Aplicação de princípios SOLID
+
+## Pré requisitos
+Para rodar a aplicação é necessário ter:
+- Versão Flutter 3 ou superior
+- Versão Dart correspondente
+- Java 17
+- Ruby + Cocoapos(pra execução IOS)
+
+Para mais informações consulte a [Documetação oficial](https://docs.flutter.dev/) do Flutter.
