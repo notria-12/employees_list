@@ -4,6 +4,7 @@ class AppDimensions {
     required this.xSmall,
     required this.small,
     required this.medium,
+    required this.xMedium,
     required this.large,
     required this.xl,
   });
@@ -13,7 +14,8 @@ class AppDimensions {
         xxSmall: 4,
         xSmall: 8,
         small: 16,
-        medium: 24,
+        medium: 20,
+        xMedium: 24,
         large: 32,
         xl: 48,
       );
@@ -29,6 +31,8 @@ class AppDimensions {
 
   /// [medium] spacing.
   final double medium;
+
+  final double xMedium;
 
   /// [large] spacing.
   final double large;

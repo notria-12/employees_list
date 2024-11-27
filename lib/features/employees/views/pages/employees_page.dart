@@ -28,7 +28,7 @@ class _EmployeesPageState extends State<EmployeesPage> {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(AppTheme.of(context).dimensions.xSmall),
           child: Container(
             decoration: BoxDecoration(
                 color: AppTheme.of(context).colors.gray05,
@@ -45,7 +45,7 @@ class _EmployeesPageState extends State<EmployeesPage> {
           Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(AppTheme.of(context).dimensions.xSmall),
                 child: Image.asset('assets/icons/bell.png'),
               ),
               Positioned(
@@ -73,14 +73,15 @@ class _EmployeesPageState extends State<EmployeesPage> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(
+            horizontal: AppTheme.of(context).dimensions.medium),
         child: LayoutBuilder(builder: (context, constraints) {
           return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: AppTheme.of(context).dimensions.xMedium,
                 ),
                 Text(
                   'Funcionários',
@@ -104,8 +105,8 @@ class _EmployeesPageState extends State<EmployeesPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: AppTheme.of(context).dimensions.xMedium,
                 ),
                 Column(
                   children: [
