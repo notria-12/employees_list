@@ -11,7 +11,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 5, 0, 255),
+      backgroundColor: Theme.of(context).primaryColor,
       body: BlocListener<SplashCubit, SplashState>(
         bloc: getIt.get<SplashCubit>()..init(),
         child: Center(

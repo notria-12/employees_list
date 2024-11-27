@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:employees_list/features/employees/models/employee_model.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,14 @@ class EmployeeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      collapsedShape: Border.all(color: Color.fromARGB(255, 233, 233, 233)),
-      title: Text(employee.name),
+      iconColor: Theme.of(context).primaryColor,
+      collapsedIconColor: Theme.of(context).primaryColor,
+      collapsedShape: Border.all(color: AppTheme.of(context).colors.gray10),
+      shape: Border.all(color: AppTheme.of(context).colors.gray10),
+      title: Text(
+        employee.name,
+        style: Theme.of(context).textTheme.titleSmall,
+      ),
       leading: Container(
         height: 32,
         width: 32,
@@ -30,7 +37,7 @@ class EmployeeTile extends StatelessWidget {
                 label: 'Cargo',
                 content: employee.job,
               ),
-              Divider(),
+              const Divider(),
               EmployeeInfoLine(
                 label: 'Data de admissão',
                 content: employee.admissionDate.toString(),
@@ -63,8 +70,14 @@ class EmployeeInfoLine extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label),
-        Text(content),
+        Text(
+          label,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        Text(
+          content,
+          style: Theme.of(context).textTheme.titleSmall,
+        ),
       ],
     );
   }

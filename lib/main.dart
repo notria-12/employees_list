@@ -1,6 +1,7 @@
 import 'package:employees_list/features/splash/splash_page.dart';
 import 'package:employees_list/injection.dart';
 import 'package:flutter/material.dart';
+import 'package:design_system/design_system.dart';
 
 void main() {
   setupDependecies();
@@ -12,13 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppTheme theme = AppTheme.regular();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Employees',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: theme.buildTheme(),
       home: SplashPage(),
     );
   }

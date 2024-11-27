@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:employees_list/features/employees/viewmodels/employee_cubit.dart';
 import 'package:employees_list/features/employees/viewmodels/employee_state.dart';
 import 'package:employees_list/features/employees/views/widgets/employee_tile_widget.dart';
@@ -30,11 +31,12 @@ class _EmployeesPageState extends State<EmployeesPage> {
           padding: const EdgeInsets.all(8.0),
           child: Container(
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 245, 245, 245),
+                color: AppTheme.of(context).colors.gray05,
                 borderRadius: BorderRadius.circular(20)),
-            child: const Center(
+            child: Center(
               child: Text(
                 'CG',
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ),
           ),
@@ -53,7 +55,7 @@ class _EmployeesPageState extends State<EmployeesPage> {
                   width: 15,
                   height: 15,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 5, 0, 255),
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(10)),
                   child: const Center(
                     child: Text(
@@ -80,12 +82,9 @@ class _EmployeesPageState extends State<EmployeesPage> {
                 const SizedBox(
                   height: 24,
                 ),
-                const Text(
+                Text(
                   'Funcionários',
-                  style: TextStyle(
-                      fontFamily: 'Helvetica Neue',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(
                   height: 15,
@@ -93,13 +92,15 @@ class _EmployeesPageState extends State<EmployeesPage> {
                 Container(
                   height: 48,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 245, 245, 245),
+                      color: AppTheme.of(context).colors.gray05,
                       borderRadius: BorderRadius.circular(24)),
                   child: Center(
                     child: TextFormField(
-                      decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.search),
-                          border: InputBorder.none),
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.search),
+                          border: InputBorder.none,
+                          hintText: 'Pesquisar',
+                          hintStyle: Theme.of(context).textTheme.titleSmall),
                     ),
                   ),
                 ),
@@ -123,13 +124,19 @@ class _EmployeesPageState extends State<EmployeesPage> {
                           251,
                         ),
                       ),
-                      child: const Row(
+                      child: Row(
                         children: [
-                          Text('Foto'),
-                          SizedBox(
+                          Text(
+                            'Foto',
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                          const SizedBox(
                             width: 24,
                           ),
-                          Text('Nome')
+                          Text(
+                            'Nome',
+                            style: Theme.of(context).textTheme.titleMedium,
+                          )
                         ],
                       ),
                     ),
