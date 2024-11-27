@@ -1,4 +1,5 @@
 import 'package:design_system/design_system.dart';
+import 'package:employees_list/core/utils/extensions.dart';
 import 'package:employees_list/features/employees/models/employee_model.dart';
 import 'package:flutter/material.dart';
 
@@ -40,12 +41,12 @@ class EmployeeTile extends StatelessWidget {
               const Divider(),
               EmployeeInfoLine(
                 label: 'Data de admissão',
-                content: employee.admissionDate.toString(),
+                content: employee.admissionDate.format(),
               ),
               Divider(),
               EmployeeInfoLine(
                 label: 'Telefone',
-                content: employee.phone,
+                content: employee.phone.toPhone(),
               ),
               Divider()
             ],
